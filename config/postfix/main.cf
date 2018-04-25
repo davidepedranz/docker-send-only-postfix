@@ -1,0 +1,32 @@
+# domain for the emails
+mydomain = ${DOMAIN}
+myorigin = ${DOMAIN}
+
+# we do NOT want to receive emails from any domain... specify an empty list here
+mydestination =
+
+# tells Postfix from which networks it should accept emails to send
+# subnet == Postfix should forward mail from SMTP clients in the same IP subnetworks as the local machine
+mynetworks_style = subnet
+
+# direct delivery to Internet
+relayhost =
+
+# accept emails from all network interfaces (we will restrict this using Docker networks)
+inet_interfaces = all
+
+# encrypt emails from this to the destination mail server
+smtp_tls_security_level = encrypt
+
+# opendkim
+milter_protocol = 2
+milter_default_action = tempfail
+smtpd_milters = inet:localhost:12301
+non_smtpd_milters = inet:localhost:12301
+
+# no limits on the email number
+mailbox_size_limit = 0
+
+# disable useless services
+biff = no
+readme_directory = no
