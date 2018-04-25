@@ -32,6 +32,15 @@ non_smtpd_milters = inet:localhost:12301
 # no limits on the email number
 mailbox_size_limit = 0
 
+# cleanup incoming emails
+always_add_missing_headers = yes
+
+# hide details about this instance of Postfix
+smtpd_banner = $myhostname
+
+# hide details of the real email sender
+header_checks = regexp:/etc/postfix/header_checks
+
 # disable useless services
 biff = no
 readme_directory = no

@@ -1,0 +1,10 @@
+/^Received:/            IGNORE
+/^User-Agent:/          IGNORE
+/^X-Enigmail:/          IGNORE
+/^X-Mailer:/            IGNORE
+/^X-MimeOLE:/           IGNORE
+/^X-MSMail-Priority:/   IGNORE
+/^X-Spam-Status:/       IGNORE
+/^X-Spam-Level:/        IGNORE
+/^X-Sanitizer:/         IGNORE
+/^X-Originating-IP:/    IGNORE
