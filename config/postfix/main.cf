@@ -17,6 +17,8 @@ inet_interfaces = all
 
 # encrypt emails from this to the destination mail server
 smtp_tls_security_level = encrypt
+smtpd_tls_security_level = encrypt
+smtpd_relay_restrictions =  permit_mynetworks, defer_unauth_destination
 
 # opendkim
 milter_protocol = 2
