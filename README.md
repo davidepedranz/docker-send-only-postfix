@@ -34,6 +34,12 @@ Example (limit only the IP that maps to domain example.com to send emails):
 TXT example.com "v=spf1 a -all"
 ```
 
+Setup DMARC to limit who can send emails on behave of your domain. Please setup and check SPF and DKIM before DMARC.
+```
+TXT _dmarc.example.com "v=DMARC1; p=reject; pct=100; adkim=s; aspf=s"
+```
+Check tool: https://dmarcian.com/dmarc-inspector/
+
 ## References
 - https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-dkim-with-postfix-on-debian-wheezy
 - https://www.digitalocean.com/community/tutorials/how-to-use-an-spf-record-to-prevent-spoofing-improve-e-mail-reliability
