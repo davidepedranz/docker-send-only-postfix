@@ -23,7 +23,7 @@ Make sure the container is not directly exposed on the Internet, since it will a
 docker run -d \
     -p 127.0.0.1:25:25 \
     -e DOMAIN=example.com \
-    -v /path/to/mail.private:/etc/opendkim/domainkeys/mail.private
+    -v /path/to/mail.private:/etc/opendkim/domainkeys/mail.private \
     davidepedranz/docker-send-only-postfix:v0.1.0
 ```
 
